@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-// Importing
+// Importing our mySQL connection library
 var mysql = require("mysql2/promise");
 // Establishing a connection to our SQL database
 var pool = mysql.createPool({
@@ -60,26 +60,26 @@ function databaseConnect() {
                 case 2:
                     _a = _b.sent(), rows = _a[0], fields = _a[1];
                     console.log("Connection is up and running.");
-                    // CREATE OPERATION
-                    return [4 /*yield*/, connection.query("INSERT INTO customers (customerNumber, customerName, contactLastName, contactFirstName, phone, addressLine1, city, country) VALUES (705, 'Doflamugen', 'Trout', 'Logan', '704-632-5299', '1402 Wessonhunt Ct.', 'Concord', 'US')")];
+                    // Create Operation
+                    return [4 /*yield*/, connection.query("INSERT INTO customers (customerNumber, customerName, contactLastName, contactFirstName, phone, addressLine1, city, country) VALUES (706, 'Doflamugen', 'Trout', 'Logan', '704-632-5299', '1402 Wessonhunt Ct.', 'Concord', 'US')")];
                 case 3:
-                    // CREATE OPERATION
+                    // Create Operation
                     _b.sent();
                     console.log("New customer account created.");
                     return [4 /*yield*/, connection.query("SELECT * FROM customers")];
                 case 4:
                     customers = _b.sent();
                     console.log("Customer information has been logged.");
-                    // UPDATE OPERATION
-                    return [4 /*yield*/, connection.query("UPDATE customers SET customerName = 'Fake Mingo' WHERE customerNumber = 705")];
+                    // Update Operation
+                    return [4 /*yield*/, connection.query("UPDATE customers SET customerName = 'Fake Mingo' WHERE customerNumber = 204")];
                 case 5:
-                    // UPDATE OPERATION
+                    // Update Operation
                     _b.sent();
                     console.log("Customer name has been updated.");
-                    // DELETE OPERATION
+                    // Delete Operation
                     return [4 /*yield*/, connection.query("DELETE FROM customers WHERE customerNumber = 223")];
                 case 6:
-                    // DELETE OPERATION
+                    // Delete Operation
                     _b.sent();
                     console.log("Customer information has been deleted.");
                     connection.release();
@@ -93,4 +93,5 @@ function databaseConnect() {
         });
     });
 }
+// callback of our function databaseConnect
 databaseConnect();

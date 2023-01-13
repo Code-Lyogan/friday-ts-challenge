@@ -1,4 +1,4 @@
-// Importing
+// Importing our mySQL connection library
 import * as mysql from 'mysql2/promise';
 
 // Establishing a connection to our SQL database
@@ -20,19 +20,19 @@ async function databaseConnect() {
         const [rows, fields] = await connection.query("SELECT 1");
         console.log("Connection is up and running.");
 
-        // CREATE OPERATION
-        await connection.query("INSERT INTO customers (customerNumber, customerName, contactLastName, contactFirstName, phone, addressLine1, city, country) VALUES (705, 'Doflamugen', 'Trout', 'Logan', '704-632-5299', '1402 Wessonhunt Ct.', 'Concord', 'US')");
+        // Create Operation
+        await connection.query("INSERT INTO customers (customerNumber, customerName, contactLastName, contactFirstName, phone, addressLine1, city, country) VALUES (706, 'Doflamugen', 'Trout', 'Logan', '704-632-5299', '1402 Wessonhunt Ct.', 'Concord', 'US')");
         console.log("New customer account created.");
 
-        // READ OPERATION
+        // Read Operation
         const customers = await connection.query("SELECT * FROM customers");
         console.log("Customer information has been logged.");
 
-        // UPDATE OPERATION
-        await connection.query("UPDATE customers SET customerName = 'Fake Mingo' WHERE customerNumber = 705");
+        // Update Operation
+        await connection.query("UPDATE customers SET customerName = 'Fake Mingo' WHERE customerNumber = 204");
         console.log("Customer name has been updated.");
 
-        // DELETE OPERATION
+        // Delete Operation
         await connection.query("DELETE FROM customers WHERE customerNumber = 223");
         console.log("Customer information has been deleted.");
         
@@ -42,4 +42,5 @@ async function databaseConnect() {
     }
 }
 
+// callback of our function databaseConnect
 databaseConnect();
