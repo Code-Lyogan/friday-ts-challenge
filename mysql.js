@@ -71,7 +71,7 @@ function databaseConnect() {
                     customers = _b.sent();
                     console.log("Customer information has been logged.");
                     // Update Operation
-                    return [4 /*yield*/, connection.query("UPDATE customers SET customerName = 'Fake Mingo' WHERE customerNumber = 204")];
+                    return [4 /*yield*/, connection.query("UPDATE customers SET customerName = 'Fake Mingo' WHERE customerNumber = 706")];
                 case 5:
                     // Update Operation
                     _b.sent();
